@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משחק נחש</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+</head>
+<body>
+    <div class="game-wrapper"> <div class="score-container">
+            ניקוד: <span id="score">0</span>
+            <div class="speed-controls">
+                <button id="speedDown">-</button>
+                <span id="currentSpeedDisplay"></span>
+                <button id="speedUp">+</button>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+        <div id="settingsScreen" class="game-overlay hidden">
+            <h1>הגדרות משחק</h1>
+            <label for="obstacleCount">מספר מכשולים:</label>
+            <input type="number" id="obstacleCount" value="3" min="0" max="10">
+            <button id="startButton">התחל משחק</button>
+        </div>
+
+        <div id="gameOverScreen" class="game-overlay" style="display: none;">
+            <h2>המשחק נגמר!</h2>
+            <p>הניקוד שלך: <span id="finalScore">0</span></p>
+            <button id="restartButton">התחל מחדש</button>
+        </div>
+    </div> <audio id="backgroundMusic" loop>
+        <source src="sound/background_music.mp3" type="audio/mpeg">
+        הדפדפן שלך אינו תומך באלמנט האודיו.
+    </audio>
+    <audio id="explosionSound">
+        <source src="sound/explosion.mp3" type="audio/mpeg">
+        הדפדפן שלך אינו תומך באלמנט האודיו.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
